@@ -1,34 +1,31 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"Porzi":
+  - firstname: ["Lorenzo", "L."]
+    url: https://scholar.google.it/citations?user=vW1gaVEAAAAJ&hl=it
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"Buló":
+  - firstname: ["Samuel Rota", "S. R."]
+    url: https://scholar.google.com/citations?user=484sccEAAAAJ&hl=en
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Müller":
+  - firstname: ["Norman", "N."]
+    url: https://niessnerlab.org/members/norman_mueller/profile.html
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"Nießner":
+  - firstname: ["Matthias", "M."]
+    url: https://niessnerlab.org/members/matthias_niessner/profile.html
+"Dai":
+  - firstname: ["Angela", "A."]
+    url: https://www.3dunderstanding.org/team.html
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"Kontschieder":
+  - firstname: ["Peter", "P."]
+    url: https://scholar.google.com/citations?user=CxbDDRMAAAAJ&hl=en
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
-
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"Siddiqui":
+  - firstname: ["Yawar", "Y."]
+    url: https://nihalsid.github.io/
+  
+"Schwarz":
+  - firstname: ["Katja", "K."]
+    url: https://katjaschwarz.github.io/
+  

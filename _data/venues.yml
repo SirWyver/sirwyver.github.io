@@ -1,6 +1,23 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"CVPR21":
+  url: https://cvpr2021.thecvf.com/
+  color: "#2a9d8f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"CVPR23 [Highlight]":
+  url: https://cvpr2023.thecvf.com/
+  color: "#2a9d8f"
+
+"ICCV23":
+  url: https://iccv2023.thecvf.com/home
+  color: "#e9c46a"
+  
+"ICCV21":
+  url: https://iccv2021.thecvf.com/home
+  color: "#e9c46a"
+
+"ECCV22":
+  url: https://eccv2022.ecva.net/
+  color: "#264653"
+
+"ARXIV18":
+  url: https://arxiv.org/
+  color: "#a8dadc"
