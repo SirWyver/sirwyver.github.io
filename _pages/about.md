@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: AI Research Engineer for 3D Computer Vision
 
 profile:
   align: right
@@ -20,4 +20,4 @@ Hi! I'm Norman, AI Research Engineer at [Meta](https://www.meta.com/ch/) in Zuri
 
 I'm holding a Master in Informatics as well as in Mathematics from the Technical University of Aachen [RWTH](https://www.rwth-aachen.de/go/id/a/), Germany, graduating with high distinction and at the top of the class.
 
-In the past, I have worked at BMW Munich in R&D for robotics and VR and did two internships with Peter Kontschieder from [Meta Zurich](https://www.meta.com/ch).
+In the past, I have worked at BMW Munich in R&D for robotics/VR and did two internships with Peter Kontschieder from [Meta Zurich](https://www.meta.com/ch).
