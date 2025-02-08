@@ -9,7 +9,7 @@
 "ICCV23":
   url: https://iccv2023.thecvf.com/home
   color: "#e9c46a"
-  
+
 "ICCV21":
   url: https://iccv2021.thecvf.com/home
   color: "#e9c46a"
@@ -21,3 +21,10 @@
 "ARXIV18":
   url: https://arxiv.org/
   color: "#a8dadc"
+
+"SIGGRAPHASIA24":
+  url: https://asia.siggraph.org/2024/
+  color: "#264653"
+"NEURIPS24":
+  url: https://neurips.cc/
+  color: "#264653"
