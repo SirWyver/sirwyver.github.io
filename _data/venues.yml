@@ -1,27 +1,79 @@
 "CVPR21":
   url: https://cvpr2021.thecvf.com/
   color: "#2a9d8f"
-
+"CVPR22":
+  url: https://cvpr2021.thecvf.com/
+  color: "#2a9d8f"
 "CVPR23 [Highlight]":
   url: https://cvpr2023.thecvf.com/
   color: "#2a9d8f"
-
-"ICCV23":
-  url: https://iccv2023.thecvf.com/home
-  color: "#e9c46a"
-
+"CVPR23":
+  url: https://cvpr2023.thecvf.com/
+  color: "#2a9d8f"
+"CVPR24":
+  url: https://cvpr2024.thecvf.com/
+  color: "#2a9d8f"
+"CVPR25":
+  url: https://cvpr2025.thecvf.com/
+  color: "#2a9d8f"
 "ICCV21":
   url: https://iccv2021.thecvf.com/home
   color: "#e9c46a"
-
+"ICCV22":
+  url: https://iccv2023.thecvf.com/home
+  color: "#e9c46a"
+"ICCV23":
+  url: https://iccv2023.thecvf.com/home
+  color: "#e9c46a"
+"ICCV24":
+  url: https://iccv2024.thecvf.com/home
+  color: "#e9c46a"
+"ICCV25":
+  url: https://iccv2025.thecvf.com/home
+  color: "#e9c46a"
+"ICCV25 [Oral]":
+  url: https://iccv2025.thecvf.com/home
+  color: "#e9c46a"
+"ICCV25 [Spotlight]":
+  url: https://iccv2025.thecvf.com/home
+  color: "#e9c46a"
 "ECCV22":
   url: https://eccv2022.ecva.net/
+  color: "#264653"
+"ECCV23":
+  url: https://eccv2023.ecva.net/
+  color: "#264653"
+"ECCV24":
+  url: https://eccv2024.ecva.net/
   color: "#264653"
 
 "ARXIV18":
   url: https://arxiv.org/
   color: "#a8dadc"
-
+"ARXIV19":
+  url: https://arxiv.org/
+  color: "#a8dadc"
+"ARXIV20":
+  url: https://arxiv.org/
+  color: "#a8dadc"
+"ARXIV21":
+  url: https://arxiv.org/
+  color: "#a8dadc"
+"ARXIV22":
+  url: https://arxiv.org/
+  color: "#a8dadc"
+"ARXIV23":
+  url: https://arxiv.org/
+  color: "#a8dadc"
+"ARXIV24":
+  url: https://arxiv.org/
+  color: "#a8dadc"
+"ARXIV25":
+  url: https://arxiv.org/
+  color: "#a8dadc"
+"SIGGRAPHASIA23":
+  url: https://asia.siggraph.org/2023/
+  color: "#264653"
 "SIGGRAPHASIA24":
   url: https://asia.siggraph.org/2024/
   color: "#264653"
