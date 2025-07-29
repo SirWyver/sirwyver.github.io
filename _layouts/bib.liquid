@@ -20,7 +20,7 @@
         {% endif %}
       {% elsif entry.abbr %}
         {% if site.data.venues[entry.abbr] %}
-          {% assign venue_style = null %}
+          {% assign venue_style = nil %}
           {% if site.data.venues[entry.abbr].color != blank %}
             {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
           {% endif %}
@@ -36,6 +36,9 @@
         {% endif %}
       {% endif %}
     </div>
+    <div class="row abbr" style="max-height: 10px; width: 100%; margin-bottom: 20px;">
+        <abbr class="badge" style="width: 100%;" {% if venue_style %}{{venue_style}}{% endif %}><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>       
+    </div
   {% endif %}
 
   <!-- Entry bib key -->
