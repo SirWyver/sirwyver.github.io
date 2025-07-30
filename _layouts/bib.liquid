@@ -35,10 +35,10 @@
           <abbr class="badge">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
-    </div>
     <div class="row abbr" style="max-height: 10px; width: 100%; margin-bottom: 20px;">
         <abbr class="badge" style="width: 100%;" {% if venue_style %}{{venue_style}}{% endif %}><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>       
     </div
+    </div>
   {% endif %}
 
   <!-- Entry bib key -->
