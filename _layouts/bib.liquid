@@ -18,7 +18,7 @@
             alt=entry.preview
           %}
         {% endif %}
-      {% elsif entry.abbr %}
+      {% if entry.abbr %}
         {% if site.data.venues[entry.abbr] %}
           {% assign venue_style = nil %}
           {% if site.data.venues[entry.abbr].color != blank %}
@@ -35,17 +35,11 @@
           <abbr class="badge">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
-    <div class="row abbr" style="max-height: 10px; width: 100%; margin-bottom: 20px;">
-        <abbr class="badge" style="width: 100%;" {% if venue_style %}{{venue_style}}{% endif %}><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>       
-    </div
-    </div>
+    </div> {# <-- Correctly closes the col-sm-2 div here #}
   {% endif %}
 
-  <!-- Entry bib key -->
   <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
-    <!-- Title -->
     <div class="title">{{ entry.title }}</div>
-    <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
 
@@ -122,7 +116,7 @@
                 if (++cursorPosition == more_authors_text.length){
                   clearInterval(textAdder);
                 }
-            }, '{{site.more_authors_animation_delay}}');
+              }, '{{site.more_authors_animation_delay}}');
           "
         >
           {{- more_authors_hide -}}
@@ -130,7 +124,6 @@
       {% endif %}
     </div>
 
-    <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
     {% if entry.type == 'article' %}
@@ -157,7 +150,6 @@
       {{ entry.note | strip }}
     </div>
 
-    <!-- Links/Buttons -->
     <div class="links">
       {% if entry.abstract %}
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
@@ -217,7 +209,7 @@
       {% endif %}
     </div>
     {% if site.enable_publication_badges %}
-      {% assign entry_has_altmetric_badge = entry.altmetric or entry.doi or  entry.eprint or entry.pmid or entry.isbn %}
+      {% assign entry_has_altmetric_badge = entry.altmetric or entry.doi or entry.eprint or entry.pmid or entry.isbn %}
       {% assign entry_has_dimensions_badge = entry.dimensions or entry.doi or entry.pmid %}
       {% assign entry_has_google_scholar_badge = entry.google_scholar_id %}
       {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge %}
@@ -275,14 +267,12 @@
     {% endif %}
 
     {% if entry.abstract %}
-      <!-- Hidden abstract block -->
       <div class="abstract hidden">
         <p>{{ entry.abstract }}</p>
       </div>
     {% endif %}
 
     {% if entry.bibtex_show %}
-      <!-- Hidden bibtex block -->
       <div class="bibtex hidden">
         {% highlight bibtex %}
         {{- entry.bibtex | hideCustomBibtex -}}
@@ -291,7 +281,6 @@
     {% endif %}
 
     {% if entry.video %}
-      <!-- Hidden video block -->
       <div class="abstract hidden">
         <div style="text-align: center;">{% include video.liquid path=entry.video class="img-fluid rounded z-depth-1" controls=true %}</div>
       </div>
