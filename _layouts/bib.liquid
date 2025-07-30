@@ -18,8 +18,7 @@
             alt=entry.preview
           %}
         {% endif %}
-      {% endif %}
-      {% if entry.abbr %}
+      {% elif entry.abbr %}
         {% if site.data.venues[entry.abbr] %}
           {% assign venue_style = nil %}
           {% if site.data.venues[entry.abbr].color != blank %}
@@ -36,7 +35,8 @@
           <abbr class="badge">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
-    </div> {# <-- Correctly closes the col-sm-2 div here #}
+      <abbr class="badge" style="width: 100%;" {% if venue_style %}{{venue_style}}{% endif %}><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>       
+    </div> 
   {% endif %}
 
   <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
