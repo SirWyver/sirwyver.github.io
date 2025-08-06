@@ -244,9 +244,9 @@
               class="__dimensions_badge_embed__"
               {% if entry.doi %}
                 data-doi="{{ entry.doi }}"
-              {% else %}
+              {% elsif entry.pmid %}
                 data-pmid="{{ entry.pmid }}"
-              {% else %}
+              {% elsif entry.dimensions %}
                 data-id="{{ entry.dimensions }}"
               {% endif %}
               data-hide-zero-citations="true"

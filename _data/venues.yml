@@ -6,7 +6,7 @@
   url: https://cvpr2021.thecvf.com/
   color: "#2a9d8f"
 
-"CVPR23 [Highlight]":
+"CVPR23<br/>(Highlight)":
   url: https://cvpr2023.thecvf.com/
   color: "#2a9d8f"
 
@@ -42,18 +42,18 @@
   url: https://iccv2025.thecvf.com/home
   color: "#e9c46a"
 
-"ICCV25 [Oral]":
+"ICCV25<br/>(Oral)":
   url: https://iccv2025.thecvf.com/home
   color: "#e9c46a"
 
-"ICCV25 [Spotlight]":
+"ICCV25<br/>(Spotlight)":
   url: https://iccv2025.thecvf.com/home
   color: "#e9c46a"
 
 "ECCV22":
   url: https://eccv2022.ecva.net/
   color: "#264653"
-  
+
 "ECCV23":
   url: https://eccv2023.ecva.net/
   color: "#264653"
@@ -101,7 +101,7 @@
 "SIGGRAPHASIA24":
   url: https://asia.siggraph.org/2024/
   color: "#264653"
-  
+
 "NEURIPS24":
   url: https://neurips.cc/
   color: "#264653"
