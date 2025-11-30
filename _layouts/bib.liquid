@@ -18,22 +18,22 @@
             alt=entry.preview
           %}
         {% endif %}
-      {% elsif entry.abbr %}
-        {% if site.data.venues[entry.abbr] %}
-          {% assign venue_style = null %}
-          {% if site.data.venues[entry.abbr].color != blank %}
-            {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
-          {% endif %}
-          <abbr
-            class="badge"
-            {% if venue_style %}
-              {{ venue_style }}
+      {% endif %}
+
+      {% if entry.abbr %}
+        <div class="abbr" style="height: auto; margin-top: 0.5rem;">
+          {% if site.data.venues[entry.abbr] %}
+            {% assign venue_style = null %}
+            {% if site.data.venues[entry.abbr].color != blank %}
+              {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '; width: 100%; display: inline-block;"' %}
+            {% else %}
+              {% assign venue_style = 'style="width: 100%; display: inline-block;"' %}
             {% endif %}
-            ><a href="{{site.data.venues[entry.abbr].url}}">{{ entry.abbr }}</a></abbr
-          >
-        {% else %}
-          <abbr class="badge">{{ entry.abbr }}</abbr>
-        {% endif %}
+            <abbr class="badge" {{ venue_style }}><a href="{{site.data.venues[entry.abbr].url}}">{{ entry.abbr }}</a></abbr>
+          {% else %}
+            <abbr class="badge" style="width: 100%; display: inline-block;">{{ entry.abbr }}</abbr>
+          {% endif %}
+        </div>
       {% endif %}
     </div>
   {% endif %}
