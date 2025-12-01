@@ -23,3 +23,8 @@ I completed my PhD at the [Visual Computing and Artificial Intelligence](https:/
 Additionally, I hold Bachelor's and Master's degrees in both Informatics and Mathematics from [RWTH Aachen University](https://www.rwth-aachen.de/go/id/a/), Germany, graduating with high distinction and at the top of my class.
 
 Previously, I worked at BMW Munich in R&D for robotics and VR, and completed two research internships with [Peter Kontschieder](https://scholar.google.com/citations?user=CxbDDRMAAAAJ) at [Meta Zurich](https://www.meta.com/ch).
+
+### Academic Service
+
+- **Area Chair**: CVPR (2026)
+- **Reviewer**: CVPR (since 2022), ICCV (since 2023)
