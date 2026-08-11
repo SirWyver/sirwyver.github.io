@@ -1,4 +1,9 @@
 {% assign img_path = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | remove: '.tiff' | remove: '.gif' %}
+{% if include.animated_path %}
+  {% assign animated_img_path = include.animated_path | remove: '.gif' %}
+  {% assign animated_cache_url = include.animated_path | relative_url | bust_file_cache %}
+  {% assign animated_cache_key = animated_cache_url | split: '?' | last %}
+{% endif %}
 
 <figure
   {% if include.slot %}
@@ -21,6 +26,9 @@
           sizes="95vw"
         {% endif %}
         type="image/webp"
+        {% if include.animated_path %}
+          data-animated-srcset="{% for i in site.imagemagick.widths %}{{ animated_img_path | relative_url }}-{{ i }}.webp?{{ animated_cache_key }}-coalesced {{i}}w,{% endfor %}"
+        {% endif %}
       >
     {% endif %}
     <img
@@ -38,8 +46,11 @@
       {% else %}
         height="auto"
       {% endif %}
-      {% if include['min-width'] or include['min-height'] or include['max-width'] or include['max-height'] %}
+      {% if include.height or include['min-width'] or include['min-height'] or include['max-width'] or include['max-height'] %}
         style="
+          {% if include.height %}
+            height: auto;
+          {% endif %}
           {% if include['min-width'] %}
             min-width: {{ include.min-width }};
           {% endif %}
@@ -67,6 +78,15 @@
         loading="{{ include.loading }}"
       {% elsif site.lazy_loading_images %}
         loading="lazy"
+      {% endif %}
+      {% if include.decoding %}
+        decoding="{{ include.decoding }}"
+      {% endif %}
+      {% if include.fetchpriority %}
+        fetchpriority="{{ include.fetchpriority }}"
+      {% endif %}
+      {% if include.animated_path %}
+        data-animated-src="{{ animated_cache_url }}"
       {% endif %}
       onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
     >
