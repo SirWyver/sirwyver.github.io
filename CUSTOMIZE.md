@@ -36,6 +36,20 @@ The project is structured as follows, focusing on the main components that you w
 
 ## Configuration
 
+### Editorial portfolio
+
+The homepage uses `_layouts/about.liquid` and the design layer in `_sass/_portfolio.scss`.
+Light and dark color tokens live in `_sass/_themes.scss`; typography uses local system fonts and Georgia, without a web-font download.
+Edit the introduction, research interests, portrait, and academic service in `_pages/about.md`.
+
+The homepage shows the first six `selected={true}` entries in `_bibliography/papers.bib`, in bibliography order.
+The `/publications/` archive includes every entry, automatically grouped by year, with a client-side search for titles, authors, venues, and years.
+Search is an enhancement: the full archive remains readable without JavaScript. Author lists and citations use native expandable details.
+Animated research previews start as still images and only load when a visitor chooses **Play preview**; **Pause preview** restores the still image.
+
+Add dated announcements in `_news/`. The homepage shows the number configured in `announcements.limit`, and `/news/` retains the full history.
+The footer stays in document flow rather than covering content. Shared navigation, skip links, and visible keyboard focus apply to every standard page.
+
 The configuration file [\_config.yml](_config.yml) contains the main configuration of the website. Most of the settings is self-explanatory and we also tried to add as much comments as possible. If you have any questions, please check if it was not already answered in the [FAQ](FAQ.md).
 
 > Note that the `url` and `baseurl` settings are used to generate the links of the website, as explained in the [install instructions](INSTALL.md).

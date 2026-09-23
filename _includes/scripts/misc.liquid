@@ -38,3 +38,6 @@
 {% if page.selected_papers or page.permalink == '/publications/' %}
   <script defer src="{{ '/assets/js/publication-previews.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
+{% if page.permalink == '/publications/' %}
+  <script defer src="{{ '/assets/js/publication-search.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}

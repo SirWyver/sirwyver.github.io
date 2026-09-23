@@ -3,19 +3,21 @@
  ******************************************************************************/
 
 :root {
-  --global-bg-color: #{$white-color};
+  color-scheme: light;
+  --global-bg-color: #f7f7f2;
   --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  --global-hover-color: #{$purple-color};
+  --global-text-color: #20332f;
+  --global-text-color-light: #596c64;
+  --global-theme-color: #17655b;
+  --global-hover-color: #104d45;
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
   --global-footer-link-color: #{$white-color};
   --global-distill-app-color: #{$grey-color};
-  --global-divider-color: rgba(0, 0, 0, 0.1);
-  --global-card-bg-color: #{$white-color};
+  --global-divider-color: #d6dfd8;
+  --global-card-bg-color: #fffefa;
+  --global-surface-color: #eaf0e9;
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
@@ -53,19 +55,21 @@
 }
 
 html[data-theme="dark"] {
-  --global-bg-color: #{$grey-color-dark};
+  color-scheme: dark;
+  --global-bg-color: #14211e;
   --global-code-bg-color: #{$code-bg-color-dark};
-  --global-text-color: #{$grey-color-light};
-  --global-text-color-light: #{$grey-color-light};
-  --global-theme-color: #{$cyan-color};
-  --global-hover-color: #{$cyan-color};
+  --global-text-color: #e5eee8;
+  --global-text-color-light: #b0bfb7;
+  --global-theme-color: #8bcebf;
+  --global-hover-color: #b1e8db;
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-light};
   --global-footer-text-color: #{$grey-color-dark};
   --global-footer-link-color: #{$black-color};
   --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #424246;
-  --global-card-bg-color: #{$grey-900};
+  --global-divider-color: #354b42;
+  --global-card-bg-color: #1c2d27;
+  --global-surface-color: #263c32;
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
