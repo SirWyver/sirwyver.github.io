@@ -14,9 +14,9 @@
   title: Meta Horizon Hyperscape
   category: Research to product
   organization: Meta Reality Labs
-  image: /assets/img/projects/reconstruction-study.svg
-  image_alt: Illustrative wireframe room with a reconstructed surface and camera viewpoints
-  image_caption: 3D reconstruction, illustrated
+  image: /assets/img/projects/hyperscape.webp
+  image_alt: Sunlit kitchen with a large island in Meta Horizon Hyperscape
+  image_caption: "Meta Horizon Hyperscape (image: Meta)"
   description: A Quest experience for exploring photorealistic reconstructions of real-world spaces.
   contribution: Shipped photorealistic 3D reconstruction as part of the research team.
   url: https://www.meta.com/experiences/meta-horizon-hyperscape-demo/7972066712871980/

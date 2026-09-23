@@ -68,7 +68,7 @@ The homepage and `/experience/` share the same service entries. `_data/awards.ym
 an award with a `paper_key` and `badge` also appears beside that publication.
 Edit the curated product and open-source projects in `_data/portfolio_projects.yml`, not the theme's sample `_projects/` collection.
 Projects can include an optional `pdf` URL for a **Technical report (PDF)** link.
-Project visuals use `image`, `image_alt`, and `image_caption`. The Hyperscape visual is an original reconstruction illustration, not a product capture.
+Project visuals use `image`, `image_alt`, and `image_caption`. The Hyperscape visual uses the supplied Meta reference image, stored locally rather than relying on an expiring CDN URL.
 The DVIS poster is derived from `SirWyver/dvis`'s `static/mesh_sample.gif`.
 
 The **CV** contact link opens `/experience/`. Its print layout and **Print / save PDF** control provide an up-to-date public CV.
