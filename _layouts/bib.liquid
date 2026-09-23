@@ -23,7 +23,7 @@
             fetchpriority="low"
             path=display_path
             animated_path=animated_path
-            sizes = "(min-width: 1080px) 440px, (min-width: 768px) 40vw, 85vw"
+            sizes = "(min-width: 768px) 176px, (min-width: 576px) 140px, 104px"
             class="preview"
             width=entry.preview_width
             height=entry.preview_height
@@ -32,28 +32,27 @@
           %}
           {% if animated_path %}
             <button class="preview-toggle" type="button" hidden>
-              <span class="preview-toggle-label">Play preview</span>
+              <span class="preview-toggle-label">Play GIF</span>
               <span class="sr-only">for {{ entry.title }}</span>
             </button>
           {% endif %}
         {% endif %}
-      {% endif %}
-
-      {% if entry.abbr %}
-        <div class="venue-badge">
-          {% assign venue_label = entry.abbr | replace: '<br/>', ' ' | replace: '<br>', ' ' %}
-          {% if site.data.venues[entry.abbr].url %}
-            <a href="{{ site.data.venues[entry.abbr].url }}">{{ venue_label }}</a>
-          {% else %}
-            {{ venue_label }}
-          {% endif %}
-        </div>
       {% endif %}
     </div>
   {% endif %}
 
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="publication-content">
+    {% if entry.abbr %}
+      <div class="venue-badge">
+        {% assign venue_label = entry.abbr | replace: '<br/>', ' ' | replace: '<br>', ' ' %}
+        {% if site.data.venues[entry.abbr].url %}
+          <a href="{{ site.data.venues[entry.abbr].url }}">{{ venue_label }}</a>
+        {% else %}
+          {{ venue_label }}
+        {% endif %}
+      </div>
+    {% endif %}
     <!-- Title -->
     <h3 class="title">{{ entry.title }}</h3>
     <!-- Author -->

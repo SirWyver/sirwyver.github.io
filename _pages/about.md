@@ -17,7 +17,7 @@ profile:
   image_alt: Portrait of Norman Müller
 
 news: true # includes a list of news items
-selected_papers: true # shows the first six entries marked as "selected={true}"
+selected_papers: true # shows all entries marked as "selected={true}" in a compact list
 social: true # includes labeled contact links in the introduction
 academic_service:
   - role: Area Chair

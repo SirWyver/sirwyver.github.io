@@ -9,10 +9,10 @@ layout: default
         {{ site.first_name }}
         {{ site.last_name }}
       </h1>
-      <p class="hero-statement">{{ page.subtitle }}</p>
       <p class="hero-role">
         {{ page.role }} at <a href="{{ page.organization_url }}">{{ page.organization }}</a>
       </p>
+      <p class="hero-statement">{{ page.subtitle }}</p>
       {% if page.social %}
         <nav class="contact-links" aria-label="Contact and profiles">
           {% if site.email %}
@@ -35,7 +35,7 @@ layout: default
         {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
         {%
           include figure.liquid loading="eager" path=profile_image_path
-          sizes="(min-width: 768px) 240px, 160px" alt=page.profile.image_alt
+          sizes="(min-width: 768px) 184px, (min-width: 576px) 128px, 88px" alt=page.profile.image_alt
           width=400 height=400 cache_bust=true fetchpriority="high"
         %}
         <p>
@@ -54,38 +54,8 @@ layout: default
     </ul>
   {% endif %}
 
-  {% if page.selected_papers %}
-    <section class="portfolio-section" id="research" aria-labelledby="research-heading">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Selected work</p>
-          <h2 id="research-heading">Research &amp; releases</h2>
-        </div>
-        <a class="text-link" href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">&rarr;</span></a>
-      </div>
-      {% include selected_papers.liquid %}
-      <a class="archive-link" href="{{ '/publications/' | relative_url }}"
-        >Explore the full publication archive <span aria-hidden="true">&rarr;</span></a
-      >
-    </section>
-  {% endif %}
-
-  {% if page.news and site.announcements.enabled %}
-    <section class="portfolio-section" aria-labelledby="news-heading">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Along the way</p>
-          <h2 id="news-heading">Recent updates</h2>
-        </div>
-        <a class="text-link" href="{{ '/news/' | relative_url }}">All updates <span aria-hidden="true">&rarr;</span></a>
-      </div>
-      {% include news.liquid limit=true %}
-    </section>
-  {% endif %}
-
   <section class="portfolio-section background-section" aria-labelledby="background-heading">
     <div class="background-copy">
-      <p class="eyebrow">A little background</p>
       <h2 id="background-heading">About me</h2>
       {{ content }}
     </div>
@@ -101,6 +71,33 @@ layout: default
       </aside>
     {% endif %}
   </section>
+
+  {% if page.selected_papers %}
+    <section class="portfolio-section" id="research" aria-labelledby="research-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="research-heading">Selected publications &amp; releases</h2>
+        </div>
+        <a class="text-link" href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      {% include selected_papers.liquid %}
+      <a class="archive-link" href="{{ '/publications/' | relative_url }}"
+        >Explore the full publication archive <span aria-hidden="true">&rarr;</span></a
+      >
+    </section>
+  {% endif %}
+
+  {% if page.news and site.announcements.enabled %}
+    <section class="portfolio-section" aria-labelledby="news-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="news-heading">Recent updates</h2>
+        </div>
+        <a class="text-link" href="{{ '/news/' | relative_url }}">All updates <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      {% include news.liquid limit=true %}
+    </section>
+  {% endif %}
 
   {% if site.latest_posts.enabled %}
     <section class="portfolio-section" aria-labelledby="posts-heading">

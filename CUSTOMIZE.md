@@ -36,16 +36,19 @@ The project is structured as follows, focusing on the main components that you w
 
 ## Configuration
 
-### Editorial portfolio
+### Compact research portfolio
 
 The homepage uses `_layouts/about.liquid` and the design layer in `_sass/_portfolio.scss`.
-Light and dark color tokens live in `_sass/_themes.scss`; typography uses local system fonts and Georgia, without a web-font download.
+Light and dark color tokens live in `_sass/_themes.scss`; the white/blue design uses local system fonts without a web-font download.
 Edit the introduction, research interests, portrait, and academic service in `_pages/about.md`.
+The biography appears before the research overview, with academic service alongside it on larger screens.
 
-The homepage shows the first six `selected={true}` entries in `_bibliography/papers.bib`, in bibliography order.
+The homepage shows all `selected={true}` entries in `_bibliography/papers.bib`, in bibliography order, as compact rows with thumbnails beside the text.
 The `/publications/` archive includes every entry, automatically grouped by year, with a client-side search for titles, authors, venues, and years.
 Search is an enhancement: the full archive remains readable without JavaScript. Author lists and citations use native expandable details.
-Animated research previews start as still images and only load when a visitor chooses **Play preview**; **Pause preview** restores the still image.
+Animated previews play when they enter the viewport and return to still images offscreen or while the tab is hidden.
+**Pause GIF** keeps a preview paused, including after scrolling away and back; **Play GIF** resumes it.
+Reduced-motion preferences disable automatic animation, while still allowing visitors to explicitly play a preview.
 
 Add dated announcements in `_news/`. The homepage shows the number configured in `announcements.limit`, and `/news/` retains the full history.
 The footer stays in document flow rather than covering content. Shared navigation, skip links, and visible keyboard focus apply to every standard page.
