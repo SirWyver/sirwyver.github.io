@@ -5,6 +5,6 @@
 - id: 3d-generation
   label: 3D generation
 - id: reconstruction
-  label: Reconstruction
+  label: 3D Reconstruction
 - id: other
   label: Other research
