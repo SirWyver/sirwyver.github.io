@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Research in agentic models, 3D generation, reconstruction, and visual understanding.
+description: Research in agentic models, controllable video generation, 3D generation, reconstruction, and visual understanding.
 nav: true
 nav_order: 2
 publication_previews: true

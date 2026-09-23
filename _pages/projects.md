@@ -15,7 +15,12 @@ nav_order: 4
       <p class="project-organization">{{ project.organization }}</p>
       <p>{{ project.description }}</p>
       <p class="project-contribution"><strong>My contribution.</strong> {{ project.contribution }}</p>
-      <a class="text-link" href="{{ project.url }}">{{ project.link_label }} <span aria-hidden="true">&#8599;</span></a>
+      <div class="project-links">
+        <a class="text-link" href="{{ project.url }}">{{ project.link_label }} <span aria-hidden="true">&#8599;</span></a>
+        {% if project.pdf %}
+          <a class="text-link" href="{{ project.pdf }}">Technical report (PDF) <span aria-hidden="true">&#8599;</span></a>
+        {% endif %}
+      </div>
     </article>
   {% endfor %}
 </div>

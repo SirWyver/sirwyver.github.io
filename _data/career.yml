@@ -30,16 +30,16 @@ education:
     institution: Technical University of Munich
     description: "Dissertation: [Generative Models on 3D Representations](https://mediatum.ub.tum.de/node?id=1759335&change_language=en), advised by Prof. Matthias Niessner."
   - period: 2014 - 2016
-    title: MSc Mathematics, summa cum laude
+    title: "MSc Mathematics, GPA: 4.0/4.0"
     institution: RWTH Aachen University
   - period: 2013 - 2016
-    title: MSc Computer Science, summa cum laude
+    title: "MSc Computer Science, GPA: 4.0/4.0"
     institution: RWTH Aachen University
   - period: 2010 - 2013
-    title: BSc Mathematics, magna cum laude
+    title: "BSc Mathematics, GPA: 3.8/4.0"
     institution: RWTH Aachen University
   - period: 2010 - 2013
-    title: BSc Computer Science, summa cum laude
+    title: "BSc Computer Science, GPA: 4.0/4.0"
     institution: RWTH Aachen University
 
 service:
@@ -49,6 +49,8 @@ service:
     venues: CVPR (since 2022), ICCV (since 2023)
 
 skills:
+  - label: Research expertise
+    value: Agentic reinforcement learning, controllable video generation, 3D generative AI, reconstruction
   - label: Programming
     value: Python, C/C++, JavaScript
   - label: Machine learning

@@ -5,6 +5,7 @@
   description: A reasoning model with agentic coding capabilities.
   contribution: Contributed to its coding capabilities through reinforcement-learning training.
   url: https://microsoft.ai/models/mai-thinking-1/
+  pdf: https://microsoft.ai/pdf/mai-thinking-1.pdf
   link_label: Explore the model
 - id: hyperscape
   title: Meta Horizon Hyperscape

@@ -62,6 +62,7 @@ Professional history, education, skills, and academic service are maintained in 
 The homepage and `/experience/` share the same service entries. `_data/awards.yml` powers the honors lists on `/experience/` and `/highlights/`;
 an award with a `paper_key` and `badge` also appears beside that publication.
 Edit the curated product and open-source projects in `_data/portfolio_projects.yml`, not the theme's sample `_projects/` collection.
+Projects can include an optional `pdf` URL for a **Technical report (PDF)** link.
 
 The **CV** contact link opens `/experience/`. Its print layout and **Print / save PDF** control provide an up-to-date public CV.
 The downloadable `assets/pdf/Norman_Mueller_Public_CV.pdf` is a snapshot of this page, not a copy of a private CV.

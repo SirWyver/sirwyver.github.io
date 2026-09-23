@@ -2,7 +2,7 @@
 layout: page
 permalink: /experience/
 title: Experience
-description: Research and engineering across agentic AI, 3D generative models, and robotics.
+description: Research and engineering across agentic AI, controllable video generation, 3D generative models, and robotics.
 nav: true
 nav_order: 5
 printable_cv: true

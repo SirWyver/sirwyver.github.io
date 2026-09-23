@@ -668,8 +668,14 @@ body h3,
     border-top: 1px solid var(--global-divider-color);
   }
 
-  .text-link {
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
     margin-top: auto;
+  }
+
+  .text-link {
     text-decoration: underline;
   }
 }
