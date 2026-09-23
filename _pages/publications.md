@@ -5,6 +5,7 @@ title: Publications
 description: Research in agentic models, 3D generation, reconstruction, and visual understanding.
 nav: true
 nav_order: 2
+publication_previews: true
 ---
 
 <div class="publication-search" hidden>

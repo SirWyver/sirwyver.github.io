@@ -1,8 +1,6 @@
 {% assign img_path = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | remove: '.tiff' | remove: '.gif' %}
 {% if include.animated_path %}
-  {% assign animated_img_path = include.animated_path | remove: '.gif' %}
   {% assign animated_cache_url = include.animated_path | relative_url | bust_file_cache %}
-  {% assign animated_cache_key = animated_cache_url | split: '?' | last %}
 {% endif %}
 
 <figure
@@ -26,9 +24,6 @@
           sizes="95vw"
         {% endif %}
         type="image/webp"
-        {% if include.animated_path %}
-          data-animated-srcset="{% for i in site.imagemagick.widths %}{{ animated_img_path | relative_url }}-{{ i }}.webp?{{ animated_cache_key }}-coalesced {{i}}w,{% endfor %}"
-        {% endif %}
       >
     {% endif %}
     <img
@@ -88,7 +83,7 @@
       {% if include.animated_path %}
         data-animated-src="{{ animated_cache_url }}"
       {% endif %}
-      onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
+      onerror="this.onerror=null; this.closest('picture').querySelectorAll('source').forEach(function(source) { source.remove(); });"
     >
   </picture>
 

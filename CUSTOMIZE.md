@@ -47,11 +47,20 @@ The homepage shows all `selected={true}` entries in `_bibliography/papers.bib`, 
 The `/publications/` archive includes every entry, automatically grouped by year, with a client-side search for titles, authors, venues, and years.
 Search is an enhancement: the full archive remains readable without JavaScript. Author lists and citations use native expandable details.
 Animated previews play when they enter the viewport and return to still images offscreen or while the tab is hidden.
+Playback uses the original GIF files, while still previews retain responsive WebP sources. Thumbnails preserve the source aspect ratio.
 **Pause GIF** keeps a preview paused, including after scrolling away and back; **Play GIF** resumes it.
 Reduced-motion preferences disable automatic animation, while still allowing visitors to explicitly play a preview.
 
 Add dated announcements in `_news/`. The homepage shows the number configured in `announcements.limit`, and `/news/` retains the full history.
+News appears in an accented panel between the biography and publications, with the newest item labeled **Latest**.
+The navigation includes **About**, **Publications**, **Highlights**, and **Updates**.
+Set `oral={true}`, `spotlight={true}`, or `highlight={true}` on a bibliography entry to show a labeled badge and include it on `/highlights/`.
+These presentation flags are display metadata and are excluded from exported citations.
+Pages with bibliography previews can set `publication_previews: true` in their front matter to enable animated thumbnails.
+
 The footer stays in document flow rather than covering content. Shared navigation, skip links, and visible keyboard focus apply to every standard page.
+Use numeric character references such as `&#8599;` for uncommon symbols in templates: the production HTML minifier double-escapes the named `&nearr;` entity.
+Stylesheet cache keys include `_sass/`, the Sass entry files in `assets/css/`, and `_config.yml`, so browsers pick up both style and layout changes.
 
 The configuration file [\_config.yml](_config.yml) contains the main configuration of the website. Most of the settings is self-explanatory and we also tried to add as much comments as possible. If you have any questions, please check if it was not already answered in the [FAQ](FAQ.md).
 

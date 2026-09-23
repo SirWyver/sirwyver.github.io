@@ -19,9 +19,9 @@
 
     const label = button.querySelector(".preview-toggle-label");
     const poster = image.getAttribute("src");
-    const sources = Array.from(media.querySelectorAll("source[data-animated-srcset]"), (source) => ({
+    const sources = Array.from(media.querySelectorAll("source"), (source) => ({
       element: source,
-      poster: source.srcset,
+      media: source.getAttribute("media"),
     }));
     const preview = {
       visible: !observer,
@@ -33,8 +33,10 @@
         if (playing === this.playing) return;
 
         this.playing = playing;
-        sources.forEach(({ element, poster }) => {
-          element.srcset = playing ? element.dataset.animatedSrcset : poster;
+        sources.forEach(({ element, media }) => {
+          if (playing) element.media = "not all";
+          else if (media === null) element.removeAttribute("media");
+          else element.media = media;
         });
         image.src = playing ? image.dataset.animatedSrc : poster;
         label.textContent = playing ? "Pause GIF" : "Play GIF";

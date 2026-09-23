@@ -16,16 +16,16 @@ layout: default
       {% if page.social %}
         <nav class="contact-links" aria-label="Contact and profiles">
           {% if site.email %}
-            <a class="contact-primary" href="mailto:{{ site.email | encode_email }}">Email <span aria-hidden="true">&nearr;</span></a>
+            <a class="contact-primary" href="mailto:{{ site.email | encode_email }}">Email <span aria-hidden="true">&#8599;</span></a>
           {% endif %}
           {% if site.scholar_userid %}
-            <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">Scholar <span aria-hidden="true">&nearr;</span></a>
+            <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">Scholar <span aria-hidden="true">&#8599;</span></a>
           {% endif %}
           {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}">GitHub <span aria-hidden="true">&nearr;</span></a>
+            <a href="https://github.com/{{ site.github_username }}">GitHub <span aria-hidden="true">&#8599;</span></a>
           {% endif %}
           {% if site.x_username %}
-            <a href="https://x.com/{{ site.x_username }}">X <span aria-hidden="true">&nearr;</span></a>
+            <a href="https://x.com/{{ site.x_username }}">X <span aria-hidden="true">&#8599;</span></a>
           {% endif %}
         </nav>
       {% endif %}
@@ -72,6 +72,16 @@ layout: default
     {% endif %}
   </section>
 
+  {% if page.news and site.announcements.enabled %}
+    <section class="portfolio-section news-section" aria-labelledby="news-heading">
+      <div class="section-heading">
+        <h2 id="news-heading">News &amp; updates</h2>
+        <a class="text-link" href="{{ '/news/' | relative_url }}">All updates <span aria-hidden="true">&#8594;</span></a>
+      </div>
+      {% include news.liquid limit=true %}
+    </section>
+  {% endif %}
+
   {% if page.selected_papers %}
     <section class="portfolio-section" id="research" aria-labelledby="research-heading">
       <div class="section-heading">
@@ -84,18 +94,6 @@ layout: default
       <a class="archive-link" href="{{ '/publications/' | relative_url }}"
         >Explore the full publication archive <span aria-hidden="true">&rarr;</span></a
       >
-    </section>
-  {% endif %}
-
-  {% if page.news and site.announcements.enabled %}
-    <section class="portfolio-section" aria-labelledby="news-heading">
-      <div class="section-heading">
-        <div>
-          <h2 id="news-heading">Recent updates</h2>
-        </div>
-        <a class="text-link" href="{{ '/news/' | relative_url }}">All updates <span aria-hidden="true">&rarr;</span></a>
-      </div>
-      {% include news.liquid limit=true %}
     </section>
   {% endif %}
 

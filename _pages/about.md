@@ -21,7 +21,7 @@ selected_papers: true # shows all entries marked as "selected={true}" in a compa
 social: true # includes labeled contact links in the introduction
 academic_service:
   - role: Area Chair
-    venues: CVPR (2026)
+    venues: CVPR (since 2026)
   - role: Reviewer
     venues: CVPR (since 2022), ICCV (since 2023)
 ---
