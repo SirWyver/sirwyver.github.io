@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper **LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes** was accepted to **CVPR 2026**!
+Our paper [**LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes**](https://luxremix.github.io/) was accepted to **CVPR 2026**!
