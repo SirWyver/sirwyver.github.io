@@ -1,0 +1,24 @@
+- id: mai-thinking-1
+  title: MAI-Thinking-1
+  category: Agentic AI
+  organization: Microsoft AI
+  description: A reasoning model with agentic coding capabilities.
+  contribution: Contributed to its coding capabilities through reinforcement-learning training.
+  url: https://microsoft.ai/models/mai-thinking-1/
+  link_label: Explore the model
+- id: hyperscape
+  title: Meta Horizon Hyperscape
+  category: Research to product
+  organization: Meta Reality Labs
+  description: A Quest experience for exploring photorealistic reconstructions of real-world spaces.
+  contribution: Shipped photorealistic 3D reconstruction as part of the research team.
+  url: https://www.meta.com/experiences/meta-horizon-hyperscape-demo/7972066712871980/
+  link_label: Explore Hyperscape
+- id: dvis
+  title: DVIS
+  category: Open-source tooling
+  organization: Independent project
+  description: A Python and three.js library for visualizing and debugging 3D data in the browser, including meshes, point clouds, bounding boxes, and camera poses.
+  contribution: Created a lightweight bridge from Python research code to interactive 3D visualizations.
+  url: https://github.com/SirWyver/dvis
+  link_label: View on GitHub

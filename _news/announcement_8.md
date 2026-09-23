@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[MapAnything](https://map-anything.github.io/) accepted to 3DV 2025!
+[MapAnything](https://map-anything.github.io/) accepted to 3DV 2026!

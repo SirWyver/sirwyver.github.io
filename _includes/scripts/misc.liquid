@@ -41,3 +41,6 @@
 {% if page.permalink == '/publications/' %}
   <script defer src="{{ '/assets/js/publication-search.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
+{% if page.printable_cv %}
+  <script defer src="{{ '/assets/js/print-cv.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}

@@ -327,6 +327,17 @@ body h3,
     background: var(--oral-badge-bg);
   }
 
+  .recognition-badge--award {
+    color: var(--oral-badge-color);
+    background: var(--oral-badge-bg);
+    border: 1px solid var(--recognition-border-color);
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--oral-badge-color);
+    }
+  }
+
   .recognition-badge--spotlight {
     color: var(--spotlight-badge-color);
     background: var(--spotlight-badge-bg);
@@ -607,6 +618,195 @@ body h3,
     color: var(--global-text-color-light);
     font-size: 0.8rem;
   }
+
+  .service-awards-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 0.8rem;
+    text-decoration: underline;
+
+    span {
+      color: inherit;
+    }
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.portfolio-project {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  background: var(--global-card-bg-color);
+
+  h2 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+  }
+
+  .project-organization {
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+  }
+
+  .project-contribution {
+    padding-top: 14px;
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  .text-link {
+    margin-top: auto;
+    text-decoration: underline;
+  }
+}
+
+.career-section {
+  margin-top: 36px;
+}
+
+.career-section h2,
+#awards-heading {
+  margin-bottom: 18px;
+  font-size: 1.35rem;
+}
+
+.career-timeline,
+.award-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 1fr);
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.career-timeline {
+  .career-period {
+    padding-top: 2px;
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .career-institution {
+    margin-bottom: 8px;
+    color: var(--global-text-color-light);
+  }
+}
+
+.award-list {
+  .award-year {
+    color: var(--global-theme-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  p {
+    color: var(--global-text-color-light);
+  }
+}
+
+.section-index,
+.cv-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.section-index {
+  margin: 20px 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--global-divider-color);
+  font-size: 0.85rem;
+
+  a {
+    padding: 4px 0;
+  }
+}
+
+.cv-actions button {
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 5px;
+  background: var(--global-surface-color);
+  color: var(--global-theme-color);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.cv-print-header {
+  display: none;
+}
+
+.career-facts {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 10px 24px;
+  font-size: 0.9rem;
+
+  dd {
+    margin: 0;
+  }
+}
+
+.cv-projects {
+  padding-left: 20px;
+  font-size: 0.9rem;
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.page-crosslink {
+  margin-top: 32px;
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .post-description {
@@ -673,12 +873,18 @@ footer.sticky-bottom {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .navbar .navbar-nav {
     align-items: stretch;
     gap: 4px;
     padding: 12px 0;
     text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .container {
@@ -729,6 +935,21 @@ footer.sticky-bottom {
 }
 
 @media (max-width: 575px) {
+  .career-timeline > li,
+  .award-list > li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .career-facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+
+    dd {
+      margin-bottom: 10px;
+    }
+  }
+
   .container {
     padding-right: 20px;
     padding-left: 20px;
@@ -812,6 +1033,108 @@ footer.sticky-bottom {
 
   .portfolio-section.news-section {
     padding: 18px;
+  }
+}
+
+@media print {
+  body.printable-cv {
+    padding: 0;
+    color: #202020;
+    background: white;
+
+    > header,
+    > footer,
+    .skip-link,
+    .post-header,
+    .cv-actions,
+    .section-index {
+      display: none !important;
+    }
+
+    .site-main {
+      max-width: none;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .public-cv,
+    .public-cv * {
+      color: #202020;
+      background: transparent;
+    }
+
+    .cv-print-header {
+      display: block;
+      margin-bottom: 12pt;
+
+      h1 {
+        margin: 0 0 4pt;
+        font-size: 22pt;
+      }
+
+      p {
+        margin: 0;
+        font-size: 10pt;
+      }
+    }
+
+    .career-section {
+      margin-top: 10pt;
+    }
+
+    h2 {
+      margin-bottom: 5pt;
+      font-size: 13pt;
+      break-after: avoid;
+    }
+
+    h3 {
+      margin-bottom: 3pt;
+      font-size: 10pt;
+    }
+
+    .career-timeline > li,
+    .award-list > li {
+      grid-template-columns: 86pt minmax(0, 1fr);
+      gap: 12pt;
+      padding: 3pt 0;
+      border-color: #dddddd;
+      break-inside: avoid;
+    }
+
+    .career-timeline p,
+    .award-list p,
+    .award-year,
+    .career-facts,
+    .cv-projects,
+    .page-crosslink {
+      font-size: 9pt;
+      line-height: 1.4;
+    }
+
+    .career-institution {
+      margin-bottom: 3pt;
+    }
+
+    .career-facts {
+      grid-template-columns: 140pt minmax(0, 1fr);
+      gap: 4pt 12pt;
+      break-inside: avoid;
+    }
+
+    .cv-projects li {
+      margin-bottom: 4pt;
+      break-inside: avoid;
+    }
+
+    .page-crosslink {
+      margin-top: 12pt;
+    }
+
+    a[href]::after {
+      content: none !important;
+    }
   }
 }
 

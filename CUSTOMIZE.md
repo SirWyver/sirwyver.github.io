@@ -40,7 +40,7 @@ The project is structured as follows, focusing on the main components that you w
 
 The homepage uses `_layouts/about.liquid` and the design layer in `_sass/_portfolio.scss`.
 Light and dark color tokens live in `_sass/_themes.scss`; the white/blue design uses local system fonts without a web-font download.
-Edit the introduction, research interests, portrait, and academic service in `_pages/about.md`.
+Edit the introduction, research interests, and portrait in `_pages/about.md`.
 The biography appears before the research overview, with academic service alongside it on larger screens.
 
 The homepage shows all `selected={true}` entries in `_bibliography/papers.bib`, in bibliography order, as compact rows with thumbnails beside the text.
@@ -53,10 +53,20 @@ Reduced-motion preferences disable automatic animation, while still allowing vis
 
 Add dated announcements in `_news/`. The homepage shows the number configured in `announcements.limit`, and `/news/` retains the full history.
 News appears in an accented panel between the biography and publications, with the newest item labeled **Latest**.
-The navigation includes **About**, **Publications**, **Highlights**, and **Updates**.
+The navigation includes **About**, **Publications**, **Highlights**, **Projects**, **Experience**, and **Updates**, collapsing below desktop widths.
 Set `oral={true}`, `spotlight={true}`, or `highlight={true}` on a bibliography entry to show a labeled badge and include it on `/highlights/`.
 These presentation flags are display metadata and are excluded from exported citations.
 Pages with bibliography previews can set `publication_previews: true` in their front matter to enable animated thumbnails.
+
+Professional history, education, skills, and academic service are maintained in `_data/career.yml`.
+The homepage and `/experience/` share the same service entries. `_data/awards.yml` powers the honors lists on `/experience/` and `/highlights/`;
+an award with a `paper_key` and `badge` also appears beside that publication.
+Edit the curated product and open-source projects in `_data/portfolio_projects.yml`, not the theme's sample `_projects/` collection.
+
+The **CV** contact link opens `/experience/`. Its print layout and **Print / save PDF** control provide an up-to-date public CV.
+The downloadable `assets/pdf/Norman_Mueller_Public_CV.pdf` is a snapshot of this page, not a copy of a private CV.
+After changing career, project, award, or service data, regenerate the PDF from `/experience/` in light mode using A4, 12 mm margins, and no browser headers/footers.
+Keep the public data and PDF free of unpublished work details.
 
 The footer stays in document flow rather than covering content. Shared navigation, skip links, and visible keyboard focus apply to every standard page.
 Use numeric character references such as `&#8599;` for uncommon symbols in templates: the production HTML minifier double-escapes the named `&nearr;` entity.
@@ -69,6 +79,8 @@ The configuration file [\_config.yml](_config.yml) contains the main configurati
 All changes made to this file are only visible after you rebuild the website. That means that you need to run `bundle exec jekyll serve --lsi` again if you are running the website locally or push your changes to GitHub if you are using GitHub Pages. All other changes are visible immediately, you only need to refresh the page.
 
 ## Modifying the CV information
+
+The active public CV is `/experience/`, described above. The following JSON Resume options belong to the original theme's optional `cv` layout and are not used by that page.
 
 There are currently 2 different ways of generating the CV page content. The first one is by using a json file located in [assets/json/resume.json](assets/json/resume.json). It is a [known standard](https://jsonresume.org/) for creating a CV programmatically. The second one, currently used as a fallback when the json file is not found, is by using a yml file located in [\_data/cv.yml](_data/cv.yml). This was the original way of creating the CV page content and since it is more human readable than a json file we decided to keep it as an option.
 

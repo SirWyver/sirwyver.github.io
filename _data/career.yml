@@ -1,0 +1,57 @@
+experience:
+  - period: 2026 - present
+    title: Member of the Technical Staff
+    institution: Microsoft AI, Zurich
+    description: Reinforcement learning for agentic models. Contributed to the coding capabilities of [MAI-Thinking-1](https://microsoft.ai/models/mai-thinking-1/) through RL training.
+  - period: 2023 - 2026
+    title: AI Researcher
+    institution: Meta Reality Labs, Zurich
+    description: Led team research on 3D generative AI, including 3D-aware video generation and feed-forward reconstruction. Shipped photorealistic 3D reconstruction to [Meta Horizon Hyperscape](https://www.meta.com/experiences/meta-horizon-hyperscape-demo/7972066712871980/) on Quest.
+  - period: "2022"
+    title: Research Scientist Intern
+    institution: Meta Reality Labs, Zurich
+    description: Developed [DiffRF](https://sirwyver.github.io/DiffRF/), a diffusion model for 3D radiance fields, later recognized at CVPR 2023 and with the MDSI Best Paper Award 2024.
+  - period: "2021"
+    title: Research Scientist Intern
+    institution: Meta Reality Labs, Zurich
+    description: Developed [AutoRF](https://sirwyver.github.io/AutoRF/) for learning 3D object radiance fields from single-view observations, published at CVPR 2022.
+  - period: 2019 - 2023
+    title: Research Associate
+    institution: Technical University of Munich
+    description: Research on generative models for 3D representations in the Visual Computing and Artificial Intelligence group, advised by Prof. Matthias Niessner.
+  - period: 2016 - 2018
+    title: Software Developer for Robotics
+    institution: BMW Group, Munich
+    description: Developed perception software for robotic systems in automotive manufacturing.
+
+education:
+  - period: 2019 - 2024
+    title: PhD, summa cum laude
+    institution: Technical University of Munich
+    description: "Dissertation: [Generative Models on 3D Representations](https://mediatum.ub.tum.de/node?id=1759335&change_language=en), advised by Prof. Matthias Niessner."
+  - period: 2014 - 2016
+    title: MSc Mathematics, summa cum laude
+    institution: RWTH Aachen University
+  - period: 2013 - 2016
+    title: MSc Computer Science, summa cum laude
+    institution: RWTH Aachen University
+  - period: 2010 - 2013
+    title: BSc Mathematics, magna cum laude
+    institution: RWTH Aachen University
+  - period: 2010 - 2013
+    title: BSc Computer Science, summa cum laude
+    institution: RWTH Aachen University
+
+service:
+  - role: Area Chair
+    venues: CVPR (since 2026)
+  - role: Reviewer
+    venues: CVPR (since 2022), ICCV (since 2023)
+
+skills:
+  - label: Programming
+    value: Python, C/C++, JavaScript
+  - label: Machine learning
+    value: PyTorch, Triton, CUDA
+  - label: Infrastructure & visualization
+    value: Kubernetes, Slurm, Git, three.js

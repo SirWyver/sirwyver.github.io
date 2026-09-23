@@ -1,0 +1,17 @@
+<ul class="award-list">
+  {% for award in site.data.awards %}
+    <li>
+      <span class="award-year">{{ award.year }}</span>
+      <div>
+        <h3>
+          {% if award.url %}
+            <a href="{{ award.url }}">{{ award.title }}</a>
+          {% else %}
+            {{ award.title }}
+          {% endif %}
+        </h3>
+        <p>{{ award.description }}</p>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

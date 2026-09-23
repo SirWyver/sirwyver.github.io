@@ -24,6 +24,10 @@ layout: default
           {% if site.github_username %}
             <a href="https://github.com/{{ site.github_username }}">GitHub <span aria-hidden="true">&#8599;</span></a>
           {% endif %}
+          {% if site.linkedin_username %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn <span aria-hidden="true">&#8599;</span></a>
+          {% endif %}
+          <a href="{{ '/experience/' | relative_url }}">CV <span aria-hidden="true">&#8594;</span></a>
           {% if site.x_username %}
             <a href="https://x.com/{{ site.x_username }}">X <span aria-hidden="true">&#8599;</span></a>
           {% endif %}
@@ -59,15 +63,18 @@ layout: default
       <h2 id="background-heading">About me</h2>
       {{ content }}
     </div>
-    {% if page.academic_service %}
+    {% if site.data.career.service %}
       <aside class="service-panel" aria-labelledby="service-heading">
         <h3 id="service-heading">Academic service</h3>
         <dl>
-          {% for item in page.academic_service %}
+          {% for item in site.data.career.service %}
             <dt>{{ item.role }}</dt>
             <dd>{{ item.venues }}</dd>
           {% endfor %}
         </dl>
+        <a class="service-awards-link" href="{{ '/highlights/#awards' | relative_url }}"
+          >Awards &amp; recognition <span aria-hidden="true">&#8594;</span></a
+        >
       </aside>
     {% endif %}
   </section>

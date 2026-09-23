@@ -1,7 +1,8 @@
 ---
 ---
 {% assign has_recognition = false %}
-{% if entry.oral == 'true' or entry.spotlight == 'true' or entry.highlight == 'true' %}
+{% assign paper_award = site.data.awards | where: 'paper_key', entry.key | first %}
+{% if entry.oral == 'true' or entry.spotlight == 'true' or entry.highlight == 'true' or paper_award %}
   {% assign has_recognition = true %}
 {% endif %}
 <div class="publication-entry{% unless site.enable_publication_thumbnails %} publication-entry--text-only{% endunless %}{% if has_recognition %} publication-entry--recognized{% endif %}">
@@ -70,6 +71,9 @@
         {% endif %}
         {% if entry.highlight == 'true' %}
           <span class="recognition-badge recognition-badge--highlight">Highlight</span>
+        {% endif %}
+        {% if paper_award %}
+          <a class="recognition-badge recognition-badge--award" href="{{ paper_award.url }}">{{ paper_award.badge }}</a>
         {% endif %}
       </div>
     {% endif %}
