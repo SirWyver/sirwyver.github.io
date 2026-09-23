@@ -1,0 +1,1 @@
+const printCV=document.getElementById("print-cv");printCV&&(printCV.hidden=!1,printCV.addEventListener("click",()=>window.print()));
