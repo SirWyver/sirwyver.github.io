@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#14243b"/>
+  <rect x="780" width="420" height="630" fill="#1c324e"/>
+  <rect x="74" y="94" width="50" height="5" rx="2" fill="#a0caff"/>
+  <g font-family="Helvetica, Arial, sans-serif">
+    <text x="74" y="155" fill="#a8c8ea" font-size="20">AI RESEARCH / ZURICH</text>
+    <text x="70" y="278" fill="#ffffff" font-size="76" font-weight="700">Norman M&#252;ller</text>
+    <text x="74" y="356" fill="#d6e5f4" font-size="29">Agentic AI. Controllable video. 3D.</text>
+    <text x="74" y="409" fill="#a8c1d9" font-size="23">From new models to working systems.</text>
+    <text x="74" y="539" fill="#d6e5f4" font-size="21">normanm.de</text>
+  </g>
+  <path d="M848 242L976 172L1104 242V392L976 462L848 392ZM848 242L976 314L1104 242M976 314V462" fill="none" stroke="#84b9ee" stroke-width="2"/>
+  <path d="M848 392L976 322L1104 392M976 172V322" fill="none" stroke="#84b9ee" stroke-width="2" stroke-dasharray="5 9" opacity=".5"/>
+  <ellipse cx="976" cy="318" rx="161" ry="59" transform="rotate(-24 976 318)" fill="none" stroke="#e3c27c" stroke-width="2"/>
+  <g fill="#c0dfff">
+    <circle cx="848" cy="242" r="6"/><circle cx="976" cy="172" r="6"/><circle cx="1104" cy="242" r="6"/>
+    <circle cx="848" cy="392" r="6"/><circle cx="976" cy="314" r="6"/><circle cx="1104" cy="392" r="6"/>
+    <circle cx="976" cy="462" r="6"/>
+  </g>
+</svg>

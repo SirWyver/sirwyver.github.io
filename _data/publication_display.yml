@@ -1,0 +1,61 @@
+microsoft2026maithinking1:
+  venue: Microsoft AI
+  topics: [agentic-ai]
+liang2026luxremix:
+  venue: CVPR
+  topics: [3d-generation]
+  takeaway: Edit individual light sources in a captured scene, consistently across viewpoints.
+keetha2026mapanything:
+  venue: 3DV
+  topics: [reconstruction]
+  takeaway: Recover metric 3D geometry from images and optional camera or depth inputs.
+fischer2025flowr:
+  venue: ICCV
+  topics: [video-generation, reconstruction]
+simonelli2025easy3d:
+  venue: ICCV
+  topics: [other]
+schwarz2025generative:
+  venue: ICCV
+  topics: [video-generation, 3d-generation]
+dahnert2024coherent:
+  venue: NeurIPS
+  topics: [3d-generation]
+roessle2024l3dg:
+  venue: SIGGRAPH Asia
+  topics: [3d-generation]
+yu2023surf:
+  venue: ECCV
+  topics: [3d-generation]
+muller2024multidiff:
+  venue: CVPR
+  topics: [video-generation]
+consistdreamer:
+  venue: CVPR
+  topics: [3d-generation]
+hollein2024viewdiff:
+  venue: CVPR
+  topics: [video-generation]
+roessle2023ganerf:
+  venue: SIGGRAPH Asia
+  topics: [reconstruction]
+muller2023diffrf:
+  venue: CVPR
+  topics: [3d-generation]
+  takeaway: Generate 3D radiance fields directly with rendering-guided diffusion.
+siddiqui2022panoptic:
+  venue: CVPR
+  topics: [other]
+Muller_2022_CVPR:
+  venue: CVPR
+  topics: [reconstruction]
+  takeaway: Learn 3D object representations from single-view observations.
+schmauser20223d:
+  venue: arXiv
+  topics: [other]
+mueller2021completetracking:
+  venue: CVPR
+  topics: [other]
+"doi:10.1080/02331888.2015.1094070":
+  venue: Statistics
+  topics: [other]

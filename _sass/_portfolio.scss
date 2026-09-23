@@ -10,6 +10,7 @@ h1,
 h2,
 h3 {
   letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 h1,
@@ -98,6 +99,12 @@ body h3,
 
   .nav-link {
     font-size: 0.9rem;
+    text-underline-offset: 0.45em;
+
+    &[aria-current="page"] {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
   }
 }
 
@@ -152,6 +159,7 @@ body h3,
   color: var(--global-text-color-light);
   font-size: 1rem;
   line-height: 1.5;
+  text-wrap: balance;
 }
 
 .hero-role {
@@ -225,6 +233,19 @@ body h3,
   li {
     color: var(--global-text-color-light);
     font-size: 0.78rem;
+  }
+
+  a {
+    display: inline-block;
+    padding: 3px 0;
+    color: var(--global-text-color-light);
+    text-decoration: underline;
+    text-decoration-color: var(--global-divider-color);
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration-color: currentColor;
+    }
   }
 }
 
@@ -381,14 +402,21 @@ body h3,
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.035em;
+
+    .venue-year {
+      margin-left: 6px;
+      color: var(--global-text-color-light);
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+    }
   }
 
   .preview-toggle {
     display: block;
-    min-height: 28px;
+    min-height: 30px;
     margin-top: 4px;
     padding: 2px 6px;
-    border: 1px solid transparent;
+    border: 1px solid var(--global-divider-color);
     border-radius: 4px;
     background: var(--global-card-bg-color);
     color: var(--global-theme-color);
@@ -397,7 +425,7 @@ body h3,
     cursor: pointer;
 
     &:hover {
-      border-color: var(--global-divider-color);
+      border-color: var(--global-theme-color);
     }
 
     span {
@@ -419,6 +447,12 @@ body h3,
         color: var(--global-theme-color);
       }
     }
+  }
+
+  .publication-takeaway {
+    margin: 5px 0 7px;
+    font-size: 0.84rem;
+    line-height: 1.5;
   }
 
   .author,
@@ -491,19 +525,70 @@ body h3,
   }
 
   .publication-details {
-    margin-top: 14px;
+    margin-top: 6px;
     font-size: 0.83rem;
 
     summary {
       width: fit-content;
-      padding: 6px 0;
+      padding: 2px 0;
+      min-height: 24px;
       color: var(--global-theme-color);
       cursor: pointer;
+    }
+
+    .citation-details[open] {
+      margin-top: 10px;
+      padding: 12px;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 6px;
+      background: var(--global-surface-color);
+
+      summary {
+        margin-bottom: 8px;
+      }
+
+      pre,
+      code {
+        background: transparent;
+        color: var(--global-text-color);
+        font-size: 0.78rem;
+      }
+    }
+
+    .citation-details .code-display-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .copy {
+        position: static;
+        order: -1;
+        align-self: flex-end;
+        min-height: 32px;
+        margin-bottom: 8px;
+        padding: 4px 10px;
+        border: 1px solid var(--global-divider-color);
+        font-size: 0.75rem;
+        opacity: 1;
+        cursor: pointer;
+      }
     }
 
     pre {
       white-space: pre-wrap;
       overflow-wrap: anywhere;
+    }
+  }
+
+  .code-display-wrapper:focus-within .copy {
+    opacity: 1;
+  }
+
+  .copy-status {
+    margin: 8px 0 0;
+    font-size: 0.78rem;
+
+    &:empty {
+      margin: 0;
     }
   }
 
@@ -644,6 +729,27 @@ body h3,
   border: 1px solid var(--global-divider-color);
   border-radius: 8px;
   background: var(--global-card-bg-color);
+
+  .project-visual {
+    margin: -24px -24px 20px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      border-radius: 7px 7px 0 0;
+      background: #eef2f6;
+    }
+
+    figcaption {
+      padding: 8px 16px 0;
+      min-height: 2.8em;
+      color: var(--global-text-color-light);
+      font-size: 0.68rem;
+    }
+  }
 
   h2 {
     margin-bottom: 8px;
@@ -865,6 +971,38 @@ body h3,
     margin-top: 10px;
     color: var(--global-text-color-light);
     font-size: 0.8rem;
+  }
+
+  .publication-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 0;
+    border: 0;
+
+    legend {
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    button {
+      min-height: 36px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+
+      &[aria-pressed="true"] {
+        color: var(--global-bg-color);
+        background: var(--global-theme-color);
+        border-color: var(--global-theme-color);
+      }
+
+      &:hover {
+        border-color: var(--global-theme-color);
+      }
+    }
   }
 }
 

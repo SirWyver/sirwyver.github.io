@@ -1,0 +1,10 @@
+- id: agentic-ai
+  label: Agentic AI
+- id: video-generation
+  label: Video & view synthesis
+- id: 3d-generation
+  label: 3D generation
+- id: reconstruction
+  label: Reconstruction
+- id: other
+  label: Other research

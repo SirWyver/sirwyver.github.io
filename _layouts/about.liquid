@@ -53,7 +53,9 @@ layout: default
   {% if page.research_topics %}
     <ul class="research-topics" aria-label="Research interests">
       {% for topic in page.research_topics %}
-        <li>{{ topic }}</li>
+        <li>
+          <a href="{{ '/publications/' | relative_url }}?topic={{ topic.topic }}">{{ topic.label }}</a>
+        </li>
       {% endfor %}
     </ul>
   {% endif %}

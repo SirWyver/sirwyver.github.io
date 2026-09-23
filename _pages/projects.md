@@ -10,6 +10,12 @@ nav_order: 4
 <div class="project-grid">
   {% for project in site.data.portfolio_projects %}
     <article class="portfolio-project" id="{{ project.id }}" aria-labelledby="{{ project.id }}-title">
+      {% if project.image %}
+        <figure class="project-visual">
+          <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt }}" width="640" height="360" loading="lazy" decoding="async">
+          <figcaption>{{ project.image_caption }}</figcaption>
+        </figure>
+      {% endif %}
       <p class="eyebrow">{{ project.category }}</p>
       <h2 id="{{ project.id }}-title">{{ project.title }}</h2>
       <p class="project-organization">{{ project.organization }}</p>

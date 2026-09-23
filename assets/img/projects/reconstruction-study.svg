@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="room" x2="1" y2="1">
+      <stop stop-color="#182e4a"/>
+      <stop offset="1" stop-color="#0b1729"/>
+    </linearGradient>
+    <pattern id="points" width="13" height="13" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.3" fill="#81beff" opacity=".6"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="url(#room)"/>
+  <path d="M104 262V113L296 49L531 127V275L337 330Z" fill="none" stroke="#426489" stroke-width="1.5"/>
+  <path d="M104 262L296 190L531 275M296 49V190M337 330V162L531 127M104 113L337 162" fill="none" stroke="#416486" stroke-width="1.5"/>
+  <path d="M104 262L296 190L531 275L337 330Z" fill="url(#points)" stroke="#7baee2"/>
+  <path d="M167 243L248 213L320 238L240 268Z" fill="#214563" stroke="#76bfdb"/>
+  <path d="M167 243V201L248 173L320 196V238M167 201L240 226L320 196M240 226V268" fill="#244e6b" stroke="#89cddd" stroke-width="1.5"/>
+  <path d="M380 222L430 204L466 216L416 236Z" fill="#467c95" stroke="#a6d4e2"/>
+  <path d="M386 218V190L407 183L429 190V211M407 183V211" fill="none" stroke="#a6d4e2" stroke-width="2"/>
+  <g fill="#f6d894" stroke="#f6d894" stroke-width="1.5">
+    <circle cx="133" cy="290" r="4"/>
+    <circle cx="275" cy="315" r="4"/>
+    <circle cx="491" cy="307" r="4"/>
+    <path d="M133 290L152 271L158 284ZM275 315L281 293L299 302ZM491 307L470 285L483 280Z" fill="none"/>
+  </g>
+  <g stroke="#8bc4e7" opacity=".5" stroke-dasharray="3 6">
+    <path d="M133 290L240 226M275 315L240 226M491 307L407 211"/>
+  </g>
+  <g fill="#c4ddf5">
+    <circle cx="167" cy="201" r="3"/><circle cx="248" cy="173" r="3"/><circle cx="320" cy="196" r="3"/>
+    <circle cx="240" cy="226" r="3"/><circle cx="240" cy="268" r="3"/><circle cx="296" cy="190" r="3"/>
+  </g>
+</svg>

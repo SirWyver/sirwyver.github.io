@@ -2,6 +2,9 @@
   title: MAI-Thinking-1
   category: Agentic AI
   organization: Microsoft AI
+  image: /assets/img/publication_preview/mai-thinking-1.jpg
+  image_alt: MAI-Thinking-1 model graphic
+  image_caption: Agentic coding through reinforcement learning
   description: A reasoning model with agentic coding capabilities.
   contribution: Contributed to its coding capabilities through reinforcement-learning training.
   url: https://microsoft.ai/models/mai-thinking-1/
@@ -11,6 +14,9 @@
   title: Meta Horizon Hyperscape
   category: Research to product
   organization: Meta Reality Labs
+  image: /assets/img/projects/reconstruction-study.svg
+  image_alt: Illustrative wireframe room with a reconstructed surface and camera viewpoints
+  image_caption: 3D reconstruction, illustrated
   description: A Quest experience for exploring photorealistic reconstructions of real-world spaces.
   contribution: Shipped photorealistic 3D reconstruction as part of the research team.
   url: https://www.meta.com/experiences/meta-horizon-hyperscape-demo/7972066712871980/
@@ -19,6 +25,9 @@
   title: DVIS
   category: Open-source tooling
   organization: Independent project
+  image: /assets/img/projects/dvis-mesh.jpg
+  image_alt: A mesh displayed in the DVIS browser-based 3D viewer
+  image_caption: Mesh visualization in DVIS
   description: A Python and three.js library for visualizing and debugging 3D data in the browser, including meshes, point clouds, bounding boxes, and camera poses.
   contribution: Created a lightweight bridge from Python research code to interactive 3D visualizations.
   url: https://github.com/SirWyver/dvis

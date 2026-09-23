@@ -45,7 +45,12 @@ The biography appears before the research overview, with academic service alongs
 
 The homepage shows all `selected={true}` entries in `_bibliography/papers.bib`, in bibliography order, as compact rows with thumbnails beside the text.
 The `/publications/` archive includes every entry, automatically grouped by year, with a client-side search for titles, authors, venues, and years.
+Topic chips combine with the search field; `?topic=...&q=...` URLs preserve filtered views. **Clear** resets both.
+Define topics in `_data/publication_topics.yml` and assign them by bibliography key in `_data/publication_display.yml`.
+That display-only file also supplies compact venue labels and optional one-line takeaways without changing the scholarly citations.
 Search is an enhancement: the full archive remains readable without JavaScript. Author lists and citations use native expandable details.
+Every entry has a citation disclosure unless `bibtex_show={false}` is set. Its **Copy citation** control reports success only after clipboard access succeeds;
+if access is denied, the visible citation remains available for manual copying.
 Animated previews play when they enter the viewport and return to still images offscreen or while the tab is hidden.
 Playback uses the original GIF files, while still previews retain responsive WebP sources. Thumbnails preserve the source aspect ratio.
 **Pause GIF** keeps a preview paused, including after scrolling away and back; **Play GIF** resumes it.
@@ -63,6 +68,8 @@ The homepage and `/experience/` share the same service entries. `_data/awards.ym
 an award with a `paper_key` and `badge` also appears beside that publication.
 Edit the curated product and open-source projects in `_data/portfolio_projects.yml`, not the theme's sample `_projects/` collection.
 Projects can include an optional `pdf` URL for a **Technical report (PDF)** link.
+Project visuals use `image`, `image_alt`, and `image_caption`. The Hyperscape visual is an original reconstruction illustration, not a product capture.
+The DVIS poster is derived from `SirWyver/dvis`'s `static/mesh_sample.gif`.
 
 The **CV** contact link opens `/experience/`. Its print layout and **Print / save PDF** control provide an up-to-date public CV.
 The downloadable `assets/pdf/Norman_Mueller_Public_CV.pdf` is a snapshot of this page, not a copy of a private CV.
@@ -70,6 +77,9 @@ After changing career, project, award, or service data, regenerate the PDF from 
 Keep the public data and PDF free of unpublished work details.
 
 The footer stays in document flow rather than covering content. Shared navigation, skip links, and visible keyboard focus apply to every standard page.
+Set `content_updated` in `_config.yml` when public content changes; rebuilding alone must not advance the footer date.
+The original share-card artwork lives in `assets/img/social-card.svg`; after editing it, export `assets/img/social-card.png`
+at 1200 by 630 pixels using a browser's SVG renderer or an SVG editor.
 Use numeric character references such as `&#8599;` for uncommon symbols in templates: the production HTML minifier double-escapes the named `&nearr;` entity.
 Stylesheet cache keys include `_sass/`, the Sass entry files in `assets/css/`, and `_config.yml`, so browsers pick up both style and layout changes.
 

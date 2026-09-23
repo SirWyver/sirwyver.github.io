@@ -1,11 +1,16 @@
 ---
 ---
 {% assign has_recognition = false %}
+{% assign display = site.data.publication_display[entry.key] %}
 {% assign paper_award = site.data.awards | where: 'paper_key', entry.key | first %}
 {% if entry.oral == 'true' or entry.spotlight == 'true' or entry.highlight == 'true' or paper_award %}
   {% assign has_recognition = true %}
 {% endif %}
-<div class="publication-entry{% unless site.enable_publication_thumbnails %} publication-entry--text-only{% endunless %}{% if has_recognition %} publication-entry--recognized{% endif %}">
+<div
+  class="publication-entry{% unless site.enable_publication_thumbnails %} publication-entry--text-only{% endunless %}{% if has_recognition %} publication-entry--recognized{% endif %}"
+  data-topics="{{ display.topics | join: ' ' | default: 'other' }}"
+  data-venue="{{ entry.booktitle | default: entry.journal | strip_html | escape }}"
+>
   {% if site.enable_publication_thumbnails %}
     <div class="publication-media">
       {% if entry.preview %}
@@ -56,7 +61,12 @@
             {% assign venue_label = venue_label | remove: '(Oral)' | remove: '(Spotlight)' | remove: '(Highlight)' | strip %}
           {% endif %}
           <span class="venue-badge">
-            {% if site.data.venues[entry.abbr].url %}
+            {% if display.venue %}
+              {{ display.venue }}
+              {% if entry.year and entry.hide_year != 'true' %}
+                <span class="venue-year">{{ entry.year }}</span>
+              {% endif %}
+            {% elsif site.data.venues[entry.abbr].url %}
               <a href="{{ site.data.venues[entry.abbr].url }}">{{ venue_label }}</a>
             {% else %}
               {{ venue_label }}
@@ -79,6 +89,9 @@
     {% endif %}
     <!-- Title -->
     <h3 class="title">{{ entry.title }}</h3>
+    {% if display.takeaway %}
+      <p class="publication-takeaway">{{ display.takeaway }}</p>
+    {% endif %}
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -172,9 +185,11 @@
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
-    <div class="periodical">
-      {{ periodical | strip }}
-    </div>
+    {% unless display.venue %}
+      <div class="periodical">
+        {{ periodical | strip }}
+      </div>
+    {% endunless %}
     <div class="periodical">
       {{ entry.note | strip }}
     </div>
@@ -300,13 +315,11 @@
       </details>
     {% endif %}
 
-    {% if entry.bibtex_show %}
-      <details class="publication-details">
+    {% unless entry.bibtex_show == 'false' %}
+      <details class="publication-details citation-details">
         <summary>Citation</summary>
-        {% highlight bibtex %}
-        {{- entry.bibtex | hideCustomBibtex -}}
-        {% endhighlight %}
+        <pre><code>{{ entry.bibtex | hideCustomBibtex | escape }}</code></pre>
       </details>
-    {% endif %}
+    {% endunless %}
   </div>
 </div>

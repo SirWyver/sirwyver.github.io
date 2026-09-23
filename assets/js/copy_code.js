@@ -1,55 +1,52 @@
-// create element for copy button in code blocks
-var codeBlocks = document.querySelectorAll("pre");
-codeBlocks.forEach(function (codeBlock) {
-  if (
-    (codeBlock.querySelector("pre:not(.lineno)") || codeBlock.querySelector("code")) &&
-    codeBlock.querySelector("code:not(.language-chartjs)") &&
-    codeBlock.querySelector("code:not(.language-diff2html)") &&
-    codeBlock.querySelector("code:not(.language-echarts)") &&
-    codeBlock.querySelector("code:not(.language-geojson)") &&
-    codeBlock.querySelector("code:not(.language-mermaid)") &&
-    codeBlock.querySelector("code:not(.language-vega_lite)")
-  ) {
-    // create copy button
-    var copyButton = document.createElement("button");
-    copyButton.className = "copy";
-    copyButton.type = "button";
-    copyButton.ariaLabel = "Copy code to clipboard";
-    copyButton.innerText = "Copy";
-    copyButton.innerHTML = '<i class="fa-solid fa-clipboard"></i>';
+(() => {
+  document.querySelectorAll("pre").forEach((codeBlock) => {
+    const code = codeBlock.querySelector("pre:not(.lineno)") || codeBlock.querySelector("code");
+    if (
+      !code ||
+      code.matches(".language-chartjs, .language-diff2html, .language-echarts, .language-geojson, .language-mermaid, .language-vega_lite")
+    ) {
+      return;
+    }
 
-    // get code from code block and copy to clipboard
-    copyButton.addEventListener("click", function () {
-      // check if code block has line numbers
-      // i.e. `kramdown.syntax_highlighter_opts.block.line_numbers` set to true in _config.yml
-      // or using `jekyll highlight` liquid tag with `linenos` option
-      if (codeBlock.querySelector("pre:not(.lineno)")) {
-        // get code from code block ignoring line numbers
-        var code = codeBlock.querySelector("pre:not(.lineno)").innerText.trim();
-      } else {
-        // if (codeBlock.querySelector('code')) {
-        // get code from code block when line numbers are not displayed
-        var code = codeBlock.querySelector("code").innerText.trim();
+    const citation = codeBlock.closest(".citation-details");
+    const label = citation ? "Copy citation" : "Copy code";
+    const title = citation ? citation.closest(".publication-content").querySelector(".title").textContent.trim() : "";
+    const button = document.createElement("button");
+    button.className = "copy";
+    button.type = "button";
+    button.textContent = label;
+    button.setAttribute("aria-label", title ? `${label} for ${title}` : label);
+
+    const status = document.createElement("p");
+    status.className = "copy-status";
+    status.setAttribute("role", "status");
+    let resetTimer;
+
+    button.addEventListener("click", async () => {
+      window.clearTimeout(resetTimer);
+      button.disabled = true;
+      status.textContent = "";
+      try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("Clipboard access is unavailable.");
+        await navigator.clipboard.writeText(code.innerText.trim());
+        button.textContent = "Copied";
+        status.textContent = citation ? "Citation copied to clipboard." : "Code copied to clipboard.";
+        resetTimer = window.setTimeout(() => {
+          button.textContent = label;
+          status.textContent = "";
+        }, 3000);
+      } catch (error) {
+        console.warn("Unable to copy to clipboard:", error);
+        button.textContent = label;
+        status.textContent = "Could not copy automatically. Select the text and copy it manually.";
+      } finally {
+        button.disabled = false;
       }
-      window.navigator.clipboard.writeText(code);
-      copyButton.innerText = "Copied";
-      copyButton.innerHTML = '<i class="fa-solid fa-clipboard-check"></i>';
-      var waitFor = 3000;
-
-      setTimeout(function () {
-        copyButton.innerText = "Copy";
-        copyButton.innerHTML = '<i class="fa-solid fa-clipboard"></i>';
-      }, waitFor);
     });
 
-    // create wrapper div
-    var wrapper = document.createElement("div");
+    const wrapper = document.createElement("div");
     wrapper.className = "code-display-wrapper";
-
-    // add copy button and code block to wrapper div
-    const parent = codeBlock.parentElement;
-    parent.insertBefore(wrapper, codeBlock);
-    wrapper.append(codeBlock);
-    wrapper.append(copyButton);
-  }
-});
+    codeBlock.parentElement.insertBefore(wrapper, codeBlock);
+    wrapper.append(codeBlock, button, status);
+  });
+})();
