@@ -82,6 +82,8 @@ The original share-card artwork lives in `assets/img/social-card.svg`; after edi
 at 1200 by 630 pixels using a browser's SVG renderer or an SVG editor.
 Use numeric character references such as `&#8599;` for uncommon symbols in templates: the production HTML minifier double-escapes the named `&nearr;` entity.
 Stylesheet cache keys include `_sass/`, the Sass entry files in `assets/css/`, and `_config.yml`, so browsers pick up both style and layout changes.
+Deployment installs ImageMagick explicitly and runs `python3 bin/check-image-assets.py` after building.
+The check rejects missing responsive image variants, because the image plugin can log conversion errors without failing the Jekyll build.
 
 The configuration file [\_config.yml](_config.yml) contains the main configuration of the website. Most of the settings is self-explanatory and we also tried to add as much comments as possible. If you have any questions, please check if it was not already answered in the [FAQ](FAQ.md).
 
