@@ -2,6 +2,7 @@
 layout: about
 title: About
 permalink: /
+seo_title: Norman Müller – AI Researcher at Microsoft AI
 subtitle: AI research, from new models to working systems.
 role: Member of the Technical Staff
 organization: Microsoft AI

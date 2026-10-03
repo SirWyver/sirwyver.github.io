@@ -35,7 +35,7 @@
       {{ page.title }} | {{ title }}
     {% endif %}
   {% else %}
-    {{ title }}
+    {{ page.seo_title | default: title }}
   {% endif %}
 </title>
 <meta name="author" content="{{ author_name }}">
@@ -55,7 +55,7 @@
   <!-- OpenGraph -->
   <meta property="og:site_name" content="{{ title }}">
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title and page.url != '/' %}{{ page.title }} | {% endif %}{{ title }}">
+  <meta property="og:title" content="{% if page.title and page.url != '/' %}{{ page.title }} | {{ title }}{% else %}{{ page.seo_title | default: title }}{% endif %}">
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
@@ -68,7 +68,7 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="{% if page.og_image or site.og_image %}summary_large_image{% else %}summary{% endif %}">
-  <meta name="twitter:title" content="{% if page.title and page.url != '/' %}{{ page.title }} | {% endif %}{{ title }}">
+  <meta name="twitter:title" content="{% if page.title and page.url != '/' %}{{ page.title }} | {{ title }}{% else %}{{ page.seo_title | default: title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{{ page.og_image | default: site.og_image | absolute_url }}">
@@ -131,7 +131,7 @@
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
   {% if site.x_username %}
-    {% capture link %}https://twitter.com/{{ site.x_username }}{% endcapture %}
+    {% capture link %}https://x.com/{{ site.x_username }}{% endcapture %}
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
   {% if site.mastodon_username %}
@@ -222,26 +222,53 @@
     {% capture link %}https://www.zotero.org/{{ site.zotero_username }}{% endcapture %}
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
-  {% if sameaslinks != blank %}
-    {% assign sameaslinks = sameaslinks | split: '' %}
-  {% endif %}
 
+  {% assign site_root = site.url | append: site.baseurl %}
   <script type="application/ld+json">
+    {% if page.url == '/' %}
     {
-        "author":
+      "@context": "https://schema.org",
+      "@graph": [
         {
-            "@type": "Person",
-            "name": "{{ author_name }}"
+          "@type": "Person",
+          "@id": "{{ site_root }}/#person",
+          "name": {{ author_name | strip | jsonify }},
+          "alternateName": ["Norman Mueller", "Norman Muller"],
+          "givenName": {{ site.first_name | jsonify }},
+          "familyName": {{ site.last_name | jsonify }},
+          "url": "{{ site_root }}/",
+          {% if page.profile.image %}"image": "{{ site_root }}/assets/img/{{ page.profile.image }}",{% endif %}
+          {% if page.role %}"jobTitle": {{ page.role | jsonify }},{% endif %}
+          {% if page.organization %}"worksFor": { "@type": "Organization", "name": {{ page.organization | jsonify }}{% if page.organization_url %}, "url": {{ page.organization_url | jsonify }}{% endif %} },{% endif %}
+          {% if page.location %}"workLocation": { "@type": "Place", "name": {{ page.location | jsonify }} },{% endif %}
+          "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Technical University of Munich", "url": "https://www.tum.de/en/" },
+            { "@type": "CollegeOrUniversity", "name": "RWTH Aachen University", "url": "https://www.rwth-aachen.de/" }
+          ],
+          "knowsAbout": ["Agentic reinforcement learning", "Controllable video generation", "3D generative AI", "3D reconstruction", "Computer vision"],
+          {% if sameaslinks != blank %}"sameAs": {{ sameaslinks | jsonify }},{% endif %}
+          "description": {{ site.description | strip | jsonify }}
         },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-        "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
-        {% if sameaslinks != blank %}
-        "sameAs": {{ sameaslinks }},
-        {% endif %}
-        "name": "{{ author_name }}",
-        "@context": "https://schema.org"
+        {
+          "@type": "WebSite",
+          "@id": "{{ site_root }}/#website",
+          "url": "{{ site_root }}/",
+          "name": {{ author_name | strip | jsonify }},
+          "about": { "@id": "{{ site_root }}/#person" },
+          "publisher": { "@id": "{{ site_root }}/#person" }
+        }
+      ]
     }
+    {% else %}
+    {
+      "@context": "https://schema.org",
+      "@type": "{% if is_blog_post %}BlogPosting{% else %}WebPage{% endif %}",
+      "url": {{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' | jsonify }},
+      "headline": {% if page.title %}{{ page.title | jsonify }}{% else %}{{ site.title | jsonify }}{% endif %},
+      "description": {% if page.description %}{{ page.description | strip | jsonify }}{% else %}{{ site.description | strip | jsonify }}{% endif %},
+      "author": { "@type": "Person", "@id": "{{ site_root }}/#person", "name": {{ author_name | strip | jsonify }}, "url": "{{ site_root }}/" },
+      "isPartOf": { "@type": "WebSite", "@id": "{{ site_root }}/#website", "url": "{{ site_root }}/" }
+    }
+    {% endif %}
   </script>
 {% endif %}
